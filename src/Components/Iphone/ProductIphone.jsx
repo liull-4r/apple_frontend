@@ -8,7 +8,7 @@ function ProductIphone() {
   console.log(productID);
 
   useEffect(() => {
-    fetch("https://apple-backend-cvrr.onrender.com/products")
+    fetch("https://apple-backend-2f5w.onrender.com/products")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
