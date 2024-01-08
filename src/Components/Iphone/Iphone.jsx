@@ -1,21 +1,21 @@
-// import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Iphone.css";
 function Iphone() {
-  // const [iphone, setIphone] = useState([]);
-  // useEffect(() => {
+  const [iphone, setIphone] = useState([]);
+  useEffect(() => {
 
 
-  //   fetch("http://localhost:1234/products")
-  //     .then((res) => res.json())
-  //     .then((data) => {
+    fetch("https://apple-backend-cvrr.onrender.com/products")
+      .then((res) => res.json())
+      .then((data) => {
      
-  //       setIphone(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log("unable to fetch data", err);
-  //     });
-  // }, []);
+        setIphone(data);
+      })
+      .catch((err) => {
+        console.log("unable to fetch data", err);
+      });
+  }, []);
 
   return (
     <>
@@ -25,7 +25,7 @@ function Iphone() {
       <br />
       <h1 className=" font-weight-bold">Iphone</h1>
       <h2 className="">The Best For The Brightest</h2>
-{/* 
+
       {iphone?.map((ip,i) => {
         return (
           <div key={ip.product_id} className="row align-items-center my-5 ">
@@ -55,7 +55,7 @@ function Iphone() {
             </div>
           </div>
         );
-      })} */}
+      })}
     </>
   );
 }
