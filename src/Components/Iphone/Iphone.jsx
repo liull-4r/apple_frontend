@@ -1,21 +1,19 @@
-// import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Iphone.css";
 function Iphone() {
-  // const [iphone, setIphone] = useState([]);
-  // useEffect(() => {
-
-
-  //   fetch("http://localhost:1234/products")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-     
-  //       setIphone(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log("unable to fetch data", err);
-  //     });
-  // }, []);
+  const [iphone, setIphone] = useState([]);
+  useEffect(() => {
+    fetch("https://apple-backend-u888.onrender.com/products")
+      .then((res) => res.json())
+      .then((data) => {
+    
+        setIphone(data);
+      })
+      .catch((err) => {
+        console.log("unable to fetch data", err);
+      });
+  }, []);
 
   return (
     <>
@@ -25,13 +23,12 @@ function Iphone() {
       <br />
       <h1 className=" font-weight-bold">Iphone</h1>
       <h2 className="">The Best For The Brightest</h2>
-{/* 
+
       {iphone?.map((ip,i) => {
         return (
           <div key={ip.product_id} className="row align-items-center my-5 ">
             <div
-              className={`col-md mx-5  ${
-                i % 2 == 0 ? "order-md-1" : "order-md-2"
+              className={`col-md mx-5  ${i % 2 == 0 ? "order-md-1" : "order-md-2"
               }  `}
             >
               <img src={ip.product_img} alt="" />
@@ -55,7 +52,7 @@ function Iphone() {
             </div>
           </div>
         );
-      })} */}
+      })}
     </>
   );
 }

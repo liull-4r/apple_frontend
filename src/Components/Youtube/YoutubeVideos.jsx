@@ -6,8 +6,6 @@ function YoutubeVideos() {
   useEffect(() => {
   fetch(
     "https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCE_M8A5yxnLfW0KghEeajjw&maxResults=8&order=date&key=AIzaSyCHkwfxu5k5cp0o64n_LpSuwZ6n2fgINfA"
-
-    // UCE_M8A5yxnLfW0KghEeajjw
   )
     .then((res) => res.json())
     .then((data) => {
@@ -16,7 +14,7 @@ function YoutubeVideos() {
     });
   }, []);
 
-  console.log(youTubeVideos);
+
 
   return (
     <>
